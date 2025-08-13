@@ -23,11 +23,6 @@ public class Point {
         this.y = y;
     }
 
-    //Point - Point = vector
-    public Vector2D subPoints(Point other){
-        return new Vector2D(this.x- other.x , this.y-other.y);
-    }
-
     @Override
     public String toString(){
         return ("("+x+","+y+")");

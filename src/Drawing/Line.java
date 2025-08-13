@@ -3,32 +3,29 @@ package Drawing;
 import Vector_Points.*;
 import Vector_Operations.*;
 
-public class Line {
-     private Point start;
-     private Point end;
+import java.lang.management.ManagementFactory;
 
-    public Line(Point start , Point end){
+public class Line {
+    private Point start;
+    private Point end;
+
+    public Line(Point start, Point end) {
         this.start = start;
         this.end = end;
     }
 
-    public Point getStart(){
+    public Point getStart() {
         return start;
     }
 
-    public Point getEnd(){
+    public Point getEnd() {
         return end;
     }
 
-    //Line's vector
-    public  Vector2D getVector(){
-        Vector2D v =  end.subPoints(start);
-        return v;
+    public double calLength (){
+        Magnitude mag = new Magnitude();
+        Vector2D v = Vector2D.getVector(start,end);
+        return mag.calMagnitude(v);
     }
 
-    Magnitude m = new Magnitude();
-    public double length(){
-        double len = m.calMagnitude(getVector());
-        return len;
-    }
 }
